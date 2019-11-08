@@ -7,7 +7,7 @@ from tempfile import NamedTemporaryFile, mkdtemp
 
 import psycopg2
 
-from core.train import train_update
+from bothub_nlp_nlu.train import train_update
 
 
 class Migration:

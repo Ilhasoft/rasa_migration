@@ -19,12 +19,12 @@ def get_rasa_nlu_config_from_update(algorithm, ner_spacy, similarity_type, langu
     if algorithm == "statistical_model":
         pipeline.append(
             {
-                "name": "core.pipeline_components.optimized_spacy_nlp_with_labels.SpacyNLP"
+                "name": "bothub_nlp_nlu.pipeline_components.optimized_spacy_nlp_with_labels.SpacyNLP"
             }
         )
         pipeline.append(
             {
-                "name": "core.pipeline_components.tokenizer_spacy_with_labels.SpacyTokenizer"
+                "name": "bothub_nlp_nlu.pipeline_components.tokenizer_spacy_with_labels.SpacyTokenizer"
             }
         )
         pipeline.append({"name": "RegexFeaturizer"})
@@ -35,7 +35,7 @@ def get_rasa_nlu_config_from_update(algorithm, ner_spacy, similarity_type, langu
             pipeline.append({"name": "SpacyEntityExtractor"})
         pipeline.append(
             {
-                "name": "core.pipeline_components.crf_label_as_entity_extractor.CRFLabelAsEntityExtractor"
+                "name": "bothub_nlp_nlu.pipeline_components.crf_label_as_entity_extractor.CRFLabelAsEntityExtractor"
             }
         )
         pipeline.append({"name": "SklearnIntentClassifier"})
@@ -44,13 +44,13 @@ def get_rasa_nlu_config_from_update(algorithm, ner_spacy, similarity_type, langu
         # load spacy
         pipeline.append(
             {
-                "name": "core.pipeline_components.optimized_spacy_nlp_with_labels.SpacyNLP"
+                "name": "bothub_nlp_nlu.pipeline_components.optimized_spacy_nlp_with_labels.SpacyNLP"
             }
         )
         # tokenizer
         pipeline.append(
             {
-                "name": "core.pipeline_components.tokenizer_spacy_with_labels.SpacyTokenizer"
+                "name": "bothub_nlp_nlu.pipeline_components.tokenizer_spacy_with_labels.SpacyTokenizer"
             }
         )
         # featurizer
@@ -74,7 +74,7 @@ def get_rasa_nlu_config_from_update(algorithm, ner_spacy, similarity_type, langu
         # label extractor
         pipeline.append(
             {
-                "name": "core.pipeline_components.crf_label_as_entity_extractor.CRFLabelAsEntityExtractor"
+                "name": "bothub_nlp_nlu.pipeline_components.crf_label_as_entity_extractor.CRFLabelAsEntityExtractor"
             }
         )
     return RasaNLUModelConfig(
