@@ -14,7 +14,7 @@ class Migration:
     def __init__(self):
         self.ner_spacy = False
         self.similarity_type = 'cosine'
-        self.con = psycopg2.connect(host='', database='', user='', password='')
+        self.con = psycopg2.connect(host=str(os.environ.get('HOST')), database=str(os.environ.get('DB')), user=str(os.environ.get('USER')), password=str(os.environ.get('PASSWORD')))
         self.get_repository_update()
         self.con.close()
 

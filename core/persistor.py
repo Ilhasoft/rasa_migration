@@ -14,9 +14,9 @@ class BothubPersistor(Persistor):
         with open(tarname, 'rb') as tar_file:
             data = tar_file.read()
             # open('/Users/danielyohan/PycharmProjects/rasa_test_train_old/teste.tar.gz', 'wb').write(data)
-            # print(self.cursor)
+            print('salvando repo update {}'.format(self.update))
             init_cursor = self.connection.cursor()
-            init_cursor.execute('update common_repositoryupdate set bot_data = %s where id = %s;', (data, self.update))
+            init_cursor.execute('update common_repositoryupdate set bot_data = %s where id = %s;', (base64.b64encode(data).decode('utf-8'), self.update))
             self.connection.commit()
             print('Save Training')
             # self.update.save_training(data)
