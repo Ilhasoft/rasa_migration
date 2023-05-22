@@ -1,6 +1,6 @@
 plac==0.9.6
 psycopg2-binary==2.7.6.1
-requests==2.20.1
+requests==2.31.0
 contextvars==2.3
 plac==0.9.6
 python-decouple==3.1
